@@ -28,3 +28,18 @@ Dataset fpr the ballot counts have been provided via the NBA Communications arti
 
 ### Data Archictecture
 
+For this project I want to utilize a Medallion Architecture for the data:
+- Source Data: NBA Award Ballots
+- Bronze Layer: Raw, unprocessed Data from source
+    - Objective: Trace and debug
+    - Object Type: Pandas Dataframe, SQL Table
+    - Transformation: None, data remains as-is
+- Silver Layer: Clean and standardized Data
+    - Objective: Prepare Data for Analysis
+    - Object Type: Panda's Dataframe, SQL Table
+    - Transformation: Clean, standardize, normalize
+- Gold Layer: Consumable, report ready data
+    - Objective: Provide data to be consumed for reporting and analytics
+    - Object Type: SQL View
+    - Transformation: Aggregation, Logic and Rules
+- Target Data: Local DB to house the data

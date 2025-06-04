@@ -11,18 +11,6 @@ csv_path = os.path.abspath(csv_path)
 #create pandas df
 df = pd.read_csv(csv_path)
 
-for index, row in df.iterrows():
-    voter_raw = row['Voter, Affiliation']
-    voter = voter_raw.split(', ')[0]
-    affiliation = voter_raw.split(', ')[1]
-    print('{0} - {1}'.format(voter, affiliation))
-
-    place_1 = row['1st Place (10 points)']
-    place_2 = row['2nd Place (7 points)']
-    place_3 = row['3rd Place (5 points)']
-    place_4 = row['4th Place (3 points)']
-    place_5 = row['5th Place (1 point)']
-
 print(df)
 
 columns = ['voter', 'affil', '1st', '2nd', '3rd', '4th', '5th']

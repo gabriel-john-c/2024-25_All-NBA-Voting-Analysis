@@ -20,3 +20,7 @@ df_clean = pd.DataFrame(
 )
 
 print(df_clean)
+
+export_csv_path = os.path.join(current_dir, '..', '..', 'data', 'silver', 'silver_NBA-MVP.csv')
+
+df_clean.to_csv(export_csv_path, encoding='utf-8', index=False)
